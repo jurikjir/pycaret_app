@@ -21,7 +21,7 @@ def predict():
     prediction = int(prediction.Label[0])
     return render_template("page.htm", pred="Expected bill will be {}".format(prediction))
 
-@app.route('predict_api', methods=['POST'])
+@app.route('/predict_api', methods=['POST'])
 def predict_api():
     data = request.get_json(force=True)
     data_unseen = pd.DataFrame([data])
